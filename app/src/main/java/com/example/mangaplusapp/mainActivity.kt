@@ -56,7 +56,7 @@ class mainActivity : AppCompatActivity() {
                         response: Response<SearchedAnime>
                     ) {
                         if(response.body() != null){
-                            val searchedAnime = response.body()!!.results
+                            val searchedAnime = response.body()!!.data
                             animeRecyclerView.adapter = AnimeAdapter(this@mainActivity, searchedAnime)
                             animeRecyclerView.layoutManager = GridLayoutManager(this@mainActivity, 3)
                         }
@@ -73,7 +73,8 @@ class mainActivity : AppCompatActivity() {
 
     class AnimeAdapter(
         private val parentActivity: AppCompatActivity,
-        private val animes: List<Result>
+        private val animes: List<Result>,
+
     ): RecyclerView.Adapter<AnimeAdapter.CustomViewHolder>() {
         inner class CustomViewHolder(view: View): RecyclerView.ViewHolder(view)
 

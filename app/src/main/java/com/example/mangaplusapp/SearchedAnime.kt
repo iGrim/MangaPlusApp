@@ -10,12 +10,10 @@ data class SearchedAnime(
     val `requestCacheExpiry`: Int,
     @SerializedName("request_cached")
     val `requestCached`: Boolean,
-    @SerializedName("data")
-    val `data`: List<Data>,
-    @SerializedName("pagination")
-    val pagination: PaginationX,
     @SerializedName("request_hash")
     val `requestHash`: String,
-    @SerializedName("results")
-    val `results`: List<Result>,
+    @SerializedName("data")
+    val `data`: List<Result>,
+    @SerializedName("pagination")
+    val pagination: Pagination,
 )

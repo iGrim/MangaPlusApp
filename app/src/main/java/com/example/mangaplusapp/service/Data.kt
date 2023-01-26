@@ -1,11 +1,11 @@
-package com.example.mangaplusapp
+package com.example.mangaplusapp.service
 
 
 import com.google.gson.annotations.SerializedName
 
 data class Data(
     @SerializedName("aired")
-    val aired: AiredX,
+    val aired: Aired,
     @SerializedName("airing")
     val airing: Boolean,
     @SerializedName("approved")
@@ -13,23 +13,23 @@ data class Data(
     @SerializedName("background")
     val background: String,
     @SerializedName("broadcast")
-    val broadcast: BroadcastX,
+    val broadcast: Broadcast,
     @SerializedName("demographics")
-    val demographics: List<DemographicX>,
+    val demographics: List<Demographic>,
     @SerializedName("duration")
     val duration: String,
     @SerializedName("episodes")
     val episodes: Int,
     @SerializedName("explicit_genres")
-    val explicitGenres: List<Any>,
+    val explicitGenres: List<ExplicitGenre>,
     @SerializedName("favorites")
     val favorites: Int,
     @SerializedName("genres")
-    val genres: List<GenreX>,
+    val genres: List<Genre>,
     @SerializedName("images")
-    val images: ImagesXX,
+    val images: Images,
     @SerializedName("licensors")
-    val licensors: List<LicensorX>,
+    val licensors: List<Licensor>,
     @SerializedName("mal_id")
     val malId: Int,
     @SerializedName("members")
@@ -37,13 +37,13 @@ data class Data(
     @SerializedName("popularity")
     val popularity: Int,
     @SerializedName("producers")
-    val producers: List<ProducerX>,
+    val producers: List<Producer>,
     @SerializedName("rank")
     val rank: Int,
     @SerializedName("rating")
     val rating: String,
     @SerializedName("score")
-    val score: Double,
+    val score: Int,
     @SerializedName("scored_by")
     val scoredBy: Int,
     @SerializedName("season")
@@ -53,11 +53,11 @@ data class Data(
     @SerializedName("status")
     val status: String,
     @SerializedName("studios")
-    val studios: List<StudioX>,
+    val studios: List<Studio>,
     @SerializedName("synopsis")
     val synopsis: String,
     @SerializedName("themes")
-    val themes: List<ThemeX>,
+    val themes: List<Theme>,
     @SerializedName("title")
     val title: String,
     @SerializedName("title_english")
@@ -67,17 +67,13 @@ data class Data(
     @SerializedName("title_synonyms")
     val titleSynonyms: List<String>,
     @SerializedName("titles")
-    val titles: List<TitleX>,
+    val titles: List<Title>,
     @SerializedName("trailer")
-    val trailer: TrailerX,
+    val trailer: Trailer,
     @SerializedName("type")
     val type: String,
     @SerializedName("url")
     val url: String,
-    @SerializedName("image_url")
-    val imageUrl: List<ImagesX>,
     @SerializedName("year")
-    val year: Int,
-    @SerializedName("Jpg")
-    val jpg: String
+    val year: Int
 )

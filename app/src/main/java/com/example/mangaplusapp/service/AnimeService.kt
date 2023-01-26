@@ -12,7 +12,7 @@ interface AnimeService {
     @GET("top/anime")
     fun getTopAnimes(): Call<TopAnime>
 
-    @GET("search/anime")
+    @GET("anime")
     fun getSearchedAnime(@Query("q")queryString: String): Call<SearchedAnime>
 
     companion object {

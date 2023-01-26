@@ -13,5 +13,7 @@ data class TopAnime(
     @SerializedName("pagination")
     val pagination: Pagination,
     @SerializedName("top")
-    val top: List<Result>
+    val top: List<Result>,
+    @SerializedName("image_url")
+    val imageUrl: List<ImagesX>
 )
