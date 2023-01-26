@@ -13,7 +13,7 @@ import com.squareup.picasso.Picasso
 import java.text.SimpleDateFormat
 
 class AnimeDetailsBottomSheet(
-    private val anime: Result
+    private val anime: Result,
 ) : BottomSheetDialogFragment() {
 
     lateinit var binding: AnimeDetailsBottomSheetLayoutBinding

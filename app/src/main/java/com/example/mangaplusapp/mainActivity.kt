@@ -3,7 +3,6 @@ package com.example.mangaplusapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.Window
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
