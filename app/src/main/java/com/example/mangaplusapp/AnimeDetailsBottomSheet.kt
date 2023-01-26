@@ -31,7 +31,7 @@ class AnimeDetailsBottomSheet(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            Picasso.get().load(anime.imageUrl).into(image)
+            Picasso.get().load(anime.images.jpg.imageUrl).into(image)
             name.text = anime.title
             rating.text = anime.score.toString()
             pgRating.text = anime.rating

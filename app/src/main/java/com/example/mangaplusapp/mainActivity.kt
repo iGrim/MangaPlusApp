@@ -90,7 +90,7 @@ class mainActivity : AppCompatActivity() {
             val image = view.findViewById<ImageView>(R.id.image)
 
             name.text = anime.title
-            Picasso.get().load(anime.imageUrl).into(image)
+            Picasso.get().load(anime.images.jpg.imageUrl).into(image)
 
             view.setOnClickListener {
                 AnimeDetailsBottomSheet(anime).apply {
