@@ -30,6 +30,10 @@ data class Result(
     val genres: List<Genre>,
     @SerializedName("images")
     val images: Images,
+    @SerializedName("imagesx")
+    val imagesx: ImagesX,
+    @SerializedName("jpg")
+    val Jpg: Jpg,
     @SerializedName("licensors")
     val licensors: List<Licensor>,
     @SerializedName("mal_id")

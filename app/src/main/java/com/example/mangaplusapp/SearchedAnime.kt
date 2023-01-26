@@ -16,4 +16,6 @@ data class SearchedAnime(
     val `data`: List<Result>,
     @SerializedName("pagination")
     val pagination: Pagination,
+    @SerializedName("imagesx")
+    val imagesx: ImagesX,
 )
