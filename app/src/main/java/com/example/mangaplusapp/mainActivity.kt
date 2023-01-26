@@ -92,6 +92,12 @@ class mainActivity : AppCompatActivity() {
 
             name.text = anime.title
             Picasso.get().load(anime.imageUrl).into(image)
+
+            view.setOnClickListener {
+                AnimeDetailsBottomSheet(anime).apply {
+                    show(parentActivity.supportFragmentManager,"AnimeDetailsBottomSheet")
+                }
+            }
         }
 
         override fun getItemCount(): Int {
