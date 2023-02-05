@@ -32,6 +32,7 @@
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 tools:text = "Naruto"
+                android:fontFamily="@font/montserratmegular"
                 android:padding="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_width="match_parent"
