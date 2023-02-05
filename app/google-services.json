@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "655708277179",
+    "project_id": "mangaplusapp",
+    "storage_bucket": "mangaplusapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:655708277179:android:ca88d82d6460441dee1c9e",
+        "android_client_info": {
+          "package_name": "com.example.mangaplusapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "655708277179-h72t3de770vi2ou3anf3v0umbkvuq5kb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzrvGNB5rSwRMzurLLCOi7olPRJoMIBec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "655708277179-h72t3de770vi2ou3anf3v0umbkvuq5kb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

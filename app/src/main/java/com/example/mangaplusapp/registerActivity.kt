@@ -8,10 +8,11 @@ import android.view.View
 import android.widget.Button
 import android.view.WindowManager
 import com.example.mangaplusapp.databinding.ActivityLoginBinding
+import com.example.mangaplusapp.databinding.ActivityRegisterBinding
 
-class loginActivity : AppCompatActivity() {
+class registerActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityLoginBinding
+    private lateinit var binding: ActivityRegisterBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,16 +20,16 @@ class loginActivity : AppCompatActivity() {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar()?.hide();
 
-        binding = ActivityLoginBinding.inflate(layoutInflater)
+        binding = ActivityRegisterBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
 
-        binding.btnLogin.setOnClickListener{
+        binding.btnRegister.setOnClickListener{
             startActivity(Intent(this, mainActivity::class.java))
         }
 
-        binding.regText.setOnClickListener{
-            startActivity(Intent(this, registerActivity::class.java))
+        binding.logText.setOnClickListener{
+            startActivity(Intent(this, loginActivity::class.java))
         }
     }
 }
