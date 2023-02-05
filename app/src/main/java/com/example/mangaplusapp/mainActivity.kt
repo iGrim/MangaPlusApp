@@ -1,20 +1,28 @@
 package com.example.mangaplusapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.*
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mangaplusapp.databinding.ActivityLoginBinding
 import com.example.mangaplusapp.databinding.ActivityMainBinding
 import com.example.mangaplusapp.service.AnimeService
+import com.google.firebase.auth.FirebaseAuth
 import com.squareup.picasso.Picasso
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class mainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
@@ -22,6 +30,17 @@ class mainActivity : AppCompatActivity() {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar()?.hide();
         setContentView(binding.root)
+
+        auth = FirebaseAuth.getInstance()
+
+        binding.btnLogout.setOnClickListener {
+            auth.signOut()
+            Intent(this, loginActivity::class.java).also {
+                it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(it)
+                Toast.makeText(this, "Logout success!", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         binding.apply {
             val animeService = AnimeService.create()
@@ -67,6 +86,8 @@ class mainActivity : AppCompatActivity() {
                 }
                 )
             }
+
+
         }
     }
 
