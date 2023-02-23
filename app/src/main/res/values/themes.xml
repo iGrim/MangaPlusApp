@@ -13,4 +13,20 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    
+    <style name="SubTitle">
+        <item name="fontFamily">@font/montserratmegular</item>
+        <item name="android:textColor">@color/grey</item>
+
+    </style>
+    
+    <style name="TextInputLayout" parent="ThemeOverlay.Material3.AutoCompleteTextView.FilledBox">
+        <item name="boxStrokeWidth">5dp</item>
+        <item name="boxStrokeWidthFocused">5dp</item>
+    </style>
+
+    <style name="TextInputEditText" parent="ThemeOverlay.Material3.AutoCompleteTextView.FilledBox">
+        <item name="background">@drawable/bg_text_field</item>
+        <item name="fontFamily">@font/montserratmegular</item>
+    </style>
 </resources>

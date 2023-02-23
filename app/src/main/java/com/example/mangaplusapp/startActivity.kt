@@ -28,13 +28,13 @@ class startActivity : AppCompatActivity() {
 
         val loginBtn = findViewById<Button>(R.id.loginBtn)
         loginBtn.setOnClickListener{
-            val Intent = Intent(this, mainActivity::class.java)
+            val Intent = Intent(this, loginActivity::class.java)
             startActivity(Intent)
         }
 
         val googleBtn = findViewById<Button>(R.id.googleBtn)
         googleBtn.setOnClickListener{
-            val Intent = Intent(this, loginActivity::class.java)
+            val Intent = Intent(this, mainActivity::class.java)
             startActivity(Intent)
         }
     }
