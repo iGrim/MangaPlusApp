@@ -124,6 +124,10 @@ class mainActivity : AppCompatActivity() {
         textView.text = "Hello, " + email?.substringBefore("@")
 
 
+
+
+
+
         binding.btnLogout.setOnClickListener {
             auth.signOut()
             Intent(this, loginActivity::class.java).also {
@@ -209,6 +213,7 @@ class mainActivity : AppCompatActivity() {
         }
     }
 
+
     private fun uploadInfo(imgUrl: String) {
         val user = UserModel(auth.uid.toString(), imgUrl)
 
@@ -263,15 +268,14 @@ class mainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         val image = findViewById<ImageView>(R.id.imageAvatar)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
 
         if(data != null){
             if (data.data != null){
-                val binding = ActivityMainBinding.inflate(layoutInflater)
 
                 selectedImg = data.data!!
                 binding.imageAvatar.setImageURI(selectedImg)
                 Picasso.get().load(selectedImg).into(image)
-
             }
         }
 
