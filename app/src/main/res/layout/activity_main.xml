@@ -72,22 +72,23 @@
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
         android:background="@drawable/avatar_theme"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/textView"
+        android:id="@+id/userhello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="225dp"
         android:fontFamily="@font/montserratmegular"
         android:text="Hello, "
         android:textColor="@color/white"
         android:textSize="22dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageAvatar"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -98,6 +99,18 @@
         android:layout_marginEnd="8dp"
         android:background="@drawable/btc_login"
         android:text="X"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_ok"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="44dp"
+        android:background="@drawable/btc_login"
+        android:text="OK"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
