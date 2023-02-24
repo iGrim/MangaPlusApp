@@ -40,6 +40,7 @@ import java.util.*
 import android.os.Build.VERSION_CODES
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import com.google.firebase.auth.UserProfileChangeRequest
 import okhttp3.internal.notify
 
 
@@ -69,6 +70,10 @@ class mainActivity : AppCompatActivity() {
         );
         getSupportActionBar()?.hide();
         setContentView(binding.root)
+
+
+
+
 
         createNotifChannel()
 
@@ -115,12 +120,8 @@ class mainActivity : AppCompatActivity() {
 
         val currentUser = auth.currentUser
         val email = currentUser?.email
-
         val textView = findViewById<TextView>(R.id.userhello)
         textView.text = "Hello, " + email?.substringBefore("@")
-
-
-
 
 
         binding.btnLogout.setOnClickListener {
@@ -154,6 +155,7 @@ class mainActivity : AppCompatActivity() {
                 }
             })
 
+
             btnSearch.setOnClickListener{
                 val searchedAnime = searchInputEditText.text.toString()
                 val callSearchedAnime = animeService.getSearchedAnime(searchedAnime)
@@ -176,7 +178,6 @@ class mainActivity : AppCompatActivity() {
                 }
                 )
             }
-
 
         }
     }
@@ -221,19 +222,7 @@ class mainActivity : AppCompatActivity() {
             }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
 
-        if(data != null){
-            if (data.data != null){
-                selectedImg = data.data!!
-                binding = ActivityMainBinding.inflate(layoutInflater)
-
-                binding.imageAvatar.setImageURI(selectedImg)
-            }
-        }
-
-    }
 
 
     class AnimeAdapter(
@@ -268,6 +257,24 @@ class mainActivity : AppCompatActivity() {
         override fun getItemCount(): Int {
             return animes.size
         }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        val image = findViewById<ImageView>(R.id.imageAvatar)
+
+        if(data != null){
+            if (data.data != null){
+                val binding = ActivityMainBinding.inflate(layoutInflater)
+
+                selectedImg = data.data!!
+                binding.imageAvatar.setImageURI(selectedImg)
+                Picasso.get().load(selectedImg).into(image)
+
+            }
+        }
+
     }
 
 
