@@ -71,10 +71,6 @@ class mainActivity : AppCompatActivity() {
         getSupportActionBar()?.hide();
         setContentView(binding.root)
 
-
-
-
-
         createNotifChannel()
 
         val intent=Intent(this, mainActivity::class.java)
@@ -92,8 +88,6 @@ class mainActivity : AppCompatActivity() {
             .build()
 
         val notifManager = NotificationManagerCompat.from(this)
-
-
 
         auth = FirebaseAuth.getInstance()
 
@@ -116,16 +110,10 @@ class mainActivity : AppCompatActivity() {
             notifManager.notify(NOTIF_ID, notif)
         }
 
-
-
         val currentUser = auth.currentUser
         val email = currentUser?.email
         val textView = findViewById<TextView>(R.id.userhello)
         textView.text = "Hello, " + email?.substringBefore("@")
-
-
-
-
 
 
         binding.btnLogout.setOnClickListener {
