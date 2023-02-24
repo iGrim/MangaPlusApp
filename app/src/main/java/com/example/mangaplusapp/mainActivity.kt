@@ -227,6 +227,7 @@ class mainActivity : AppCompatActivity() {
         if(data != null){
             if (data.data != null){
                 selectedImg = data.data!!
+                binding = ActivityMainBinding.inflate(layoutInflater)
 
                 binding.imageAvatar.setImageURI(selectedImg)
             }
