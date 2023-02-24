@@ -98,6 +98,8 @@ class mainActivity : AppCompatActivity() {
         database = FirebaseDatabase.getInstance()
         storage = FirebaseStorage.getInstance()
 
+
+
         binding.imageAvatar.setOnClickListener {
         val intent = Intent()
         intent.action = Intent.ACTION_GET_CONTENT
@@ -268,6 +270,7 @@ class mainActivity : AppCompatActivity() {
         }
 
     }
+
 
 
 }
