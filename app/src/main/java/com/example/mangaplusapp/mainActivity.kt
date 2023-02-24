@@ -7,6 +7,7 @@ import android.app.PendingIntent
 import android.app.TaskStackBuilder
 import android.content.ContentValues.TAG
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.net.InetAddresses
 import android.net.Uri
@@ -41,6 +42,8 @@ import android.os.Build.VERSION_CODES
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.google.firebase.auth.UserProfileChangeRequest
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.storage.StorageReference
 import okhttp3.internal.notify
 
 
@@ -52,6 +55,9 @@ class mainActivity : AppCompatActivity() {
     private lateinit var storage: FirebaseStorage
     private lateinit var selectedImg: Uri
     private lateinit var dialog: AlertDialog.Builder
+    private lateinit var databaseReference: DatabaseReference
+    private lateinit var storageReference: StorageReference
+
 
     val CHANNEL_ID = "channelId"
     val CHANNEL_NAME = "channelName"
@@ -107,16 +113,22 @@ class mainActivity : AppCompatActivity() {
             startActivityForResult(intent, 1)
         }
 
-        binding.btnOk.setOnClickListener{
-            uploadData()
-            notifManager.notify(NOTIF_ID, notif)
-        }
+
 
         val currentUser = auth.currentUser
         val email = currentUser?.email
         val textView = findViewById<TextView>(R.id.userhello)
         textView.text = "Hello, " + email?.substringBefore("@")
 
+
+
+        val uid = auth.currentUser?.uid
+        databaseReference = FirebaseDatabase.getInstance().getReference("Users")
+
+        binding.btnOk.setOnClickListener{
+            uploadData()
+            notifManager.notify(NOTIF_ID, notif)
+        }
 
         binding.btnLogout.setOnClickListener {
             auth.signOut()
@@ -174,6 +186,7 @@ class mainActivity : AppCompatActivity() {
             }
 
         }
+
     }
 
     @RequiresApi(VERSION_CODES.O)
@@ -270,6 +283,7 @@ class mainActivity : AppCompatActivity() {
         }
 
     }
+
 
 
 
